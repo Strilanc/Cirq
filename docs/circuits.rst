@@ -71,7 +71,7 @@ is a Moment in which Pauli X and a CZ gate operate on three qubits:
     print(moment)
     # prints "X((0, 2)) and CZ((0, 0), (0, 1))"
 
-Note that is not the only way to construct moments, nor even the
+Note that this is not the only way to construct moments, nor even the
 typical method, but illustrates that a :class:`~cirq.Moment` is just a
 collection of operations on disjoint sets of qubits.
 
@@ -142,8 +142,8 @@ This appended an entire new moment to the qubit, which we can continue to do,
     #                │
     # (2, 0): ───H───@───
 
-In these two examples, we have appending full moments, what happens when we
-append all of these at once?
+In the above example, we have appended two moments one after another, what
+happens when we append all of these at once?
 
 .. code-block:: python
 
@@ -205,8 +205,8 @@ first :class:`~cirq.Moment` if there is space:
     #
     # (2, 0): ───H───────
 
-After creating the first momemnt with a :class:`~cirq.CZ` gate, the second
-append usese the :attr:`~cirq.InsertStrategy.EARLIEST` strategy. The
+After creating the first moment with a :class:`~cirq.CZ` gate, the second
+append uses the :attr:`~cirq.InsertStrategy.EARLIEST` strategy. The
 :class:`~cirq.H` on ``q0`` cannot slide back, while the :class:`~cirq.H` on
 ``q2`` can and so ends up in the first :class:`~cirq.Moment`.
 
